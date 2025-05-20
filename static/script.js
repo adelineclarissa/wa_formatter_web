@@ -31,7 +31,7 @@ async function uploadFile() {
     const data = await response.json();
     console.log(data.filename);
     if (data.filename) {
-      downloadUrl = `/static/${data.filename}`;
+      downloadUrl = `/download/${data.filename}`;
       status.textContent = "File ready. Click download.";
       downloadBtn.disabled = false;
     } else {

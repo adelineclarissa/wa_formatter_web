@@ -83,3 +83,13 @@ async def upload_file(file: UploadFile):
             f.write(print_chat(chat) + "\n")
 
     return {"filename": output_file}
+
+
+@app.get("/download/{filename}")
+async def download_file(filename: str):
+    file_path = os.path.join("static", filename)
+    if os.path.exists(file_path):
+        return FileResponse(
+            path=file_path, filename=filename, media_type="application/octet-stream"
+        )
+    return {"error": "File not found"}
