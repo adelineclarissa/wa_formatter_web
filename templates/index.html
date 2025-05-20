@@ -2,12 +2,20 @@
 <html>
   <head>
     <title>WA Formatter</title>
+    <script src="/static/script.js" defer></script>
   </head>
   <body>
-    <h2>Upload WA Chat File (.txt)</h2>
+    <h2>IDI WA Chat Formatter</h2>
+
+    <p>1. Please choose the .txt file you want to format</p>
     <input type="file" id="fileInput" />
+
+    <p>2. Click "Upload" button to format the conversation</p>
     <button onclick="uploadFile()">Upload</button>
+
+    <p>3. Download the formatted file</p>
+    <button id="downloadBtn" disabled>Download</button>
+
     <p id="status"></p>
-    <script src="/static/script.js"></script>
   </body>
 </html>
